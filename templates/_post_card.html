@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NFT Card - Obsidian Bloom</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration to match Design System -->
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            surface: {
+              DEFAULT: '#0b1326',
+              dim: '#0b1326',
+              bright: '#31394d',
+              'container-lowest': '#060e20',
+              'container-low': '#131b2e',
+              container: '#1a2235',
+              'container-high': '#252d40',
+              'container-highest': '#30384b',
+            },
+            primary: {
+              DEFAULT: '#b8c1ec',
+              on: '#232c55',
+              container: '#39426d',
+              'on-container': '#dbe1ff',
+            },
+            secondary: {
+              DEFAULT: '#bfc6dc',
+              on: '#293041',
+              container: '#3f4759',
+              'on-container': '#dbe1ff',
+            },
+            outline: '#8e9099',
+            'outline-variant': '#44474f',
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            '4xl': '2rem',
+          },
+          boxShadow: {
+            'ethereal': '0 0 40px rgba(184, 193, 236, 0.05)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for specific styling needs -->
+<style data-purpose="custom-styling">
+    body {
+      background-color: #060e20; /* surface-container-lowest */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      color: #e2e2e9; /* on-surface roughly */
+    }
+    
+    .nft-card {
+      /* Subtle border using outline-variant */
+      border: 1px solid #44474f;
+    }
+
+    .badge-blur {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-100 selection:bg-primary-container selection:text-primary-on-container">
+<!-- BEGIN: MainContent -->
+<main>
+<!-- BEGIN: NFT Card -->
+<!-- The main card container with deep navy background, rounded corners, and subtle shadow -->
+<article class="nft-card bg-surface-container-low w-full max-w-[420px] rounded-[32px] p-4 sm:p-5 shadow-ethereal flex flex-col gap-5 transition-transform duration-300 hover:scale-[1.02]" data-purpose="nft-display-card">
+<!-- BEGIN: Image Section -->
+<!-- Container for the NFT artwork and overlay badge -->
+<figure class="relative w-full aspect-square overflow-hidden rounded-[24px] bg-surface-container-highest">
+<!-- Main Artwork -->
+<img alt="Obsidian Bloom - Abstract dark floral artwork" class="w-full h-full object-cover" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaLT8L369hRHO7txqj5vu2ug2juzMU2nYx1d0cUgG1Vk51Fd0d9OenvC4G9bmLGc1rHGVP0o56R0bOljjPY8L22ZhVgd07ddeFG2HmAIYUyEQhw-JUGGnttepr8p9AX0j0_XZahXAO99BvVhHXCHdl7D7p_y-vxGmoHxc_XOno8eExWJfL5OFnzp3cfGtcnVj8gmxSeikbmgZAV1M4IT7CKp80ovvbWIFvRRhuXSdIBcAS5mVELzXwRmaQk2Zbjaxh6MzP8gK-ozk"/>
+<!-- Live Auction Badge positioned at bottom right -->
+<figcaption class="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10">
+<div class="badge-blur bg-surface-container/70 text-primary-on-container text-sm font-semibold px-4 py-2 rounded-full border border-surface-bright shadow-sm">
+            Live Auction
+          </div>
+</figcaption>
+</figure>
+<!-- END: Image Section -->
+<!-- BEGIN: Card Details Section -->
+<!-- Information area containing title, artist, and price -->
+<div class="flex flex-col gap-2 px-1 sm:px-2 pb-2">
+<!-- Title -->
+<h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight leading-tight">
+          Obsidian Bloom
+        </h2>
+<!-- Meta Info Layout: Artist and Price side-by-side -->
+<div class="flex justify-between items-end mt-1">
+<!-- Artist Name -->
+<div class="flex flex-col">
+<span class="text-secondary text-base sm:text-lg font-medium">
+              Elena Voss
+            </span>
+</div>
+<!-- Price Information -->
+<div class="flex flex-col items-end">
+<span class="text-primary font-bold text-xl sm:text-2xl tracking-tight">
+              1.20 ETH
+            </span>
+</div>
+</div>
+</div>
+<!-- END: Card Details Section -->
+</article>
+<!-- END: NFT Card -->
+</main>
+<!-- END: MainContent -->
+</body></html>

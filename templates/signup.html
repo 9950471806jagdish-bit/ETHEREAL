@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#1b3c57",
+                        "tertiary-container": "#bdddff",
+                        "tertiary": "#d8eaff",
+                        "on-tertiary": "#395874",
+                        "primary-container": "#70a5d9",
+                        "tertiary-fixed-dim": "#b0cff0",
+                        "error-dim": "#d7383b",
+                        "on-secondary-container": "#b4d4f3",
+                        "inverse-primary": "#286393",
+                        "surface-container-highest": "#0c283c",
+                        "on-error": "#490006",
+                        "outline-variant": "#394a5a",
+                        "primary": "#93c8fe",
+                        "on-secondary": "#2e4e67",
+                        "surface-container-high": "#072134",
+                        "secondary-fixed-dim": "#adcdeb",
+                        "primary-fixed-dim": "#86bbf0",
+                        "surface-tint": "#93c8fe",
+                        "surface-container-low": "#011524",
+                        "on-tertiary-fixed-variant": "#3a5975",
+                        "surface-variant": "#0c283c",
+                        "on-primary-fixed": "#002c4a",
+                        "surface": "#000f1d",
+                        "background": "#000f1d",
+                        "secondary-dim": "#adcdeb",
+                        "on-surface-variant": "#9badc0",
+                        "on-background": "#d5e7fc",
+                        "on-secondary-fixed-variant": "#385771",
+                        "on-primary-container": "#00253f",
+                        "surface-container": "#041b2c",
+                        "inverse-on-surface": "#465767",
+                        "inverse-surface": "#f7f9ff",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed-variant": "#004a78",
+                        "surface-bright": "#112e44",
+                        "on-surface": "#d5e7fc",
+                        "error-container": "#9f0519",
+                        "error": "#ff716c",
+                        "on-error-container": "#ffa8a3",
+                        "primary-fixed": "#93c8fe",
+                        "primary-dim": "#86bbf0",
+                        "secondary-container": "#2a4a63",
+                        "surface-dim": "#000f1d",
+                        "tertiary-dim": "#b0cff0",
+                        "tertiary-fixed": "#bdddff",
+                        "on-primary": "#00416a",
+                        "outline": "#667789",
+                        "secondary-fixed": "#bbdbfa",
+                        "on-tertiary-container": "#304f6b",
+                        "on-secondary-fixed": "#1a3b53",
+                        "secondary": "#bbdbfa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(12, 40, 60, 0.4);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .floating-element {
+            perspective: 1000px;
+        }
+        .storm-gradient {
+            background: radial-gradient(circle at top right, #072134, #000f1d);
+        }
+        .active-indicator-focus:focus-within {
+            border-left: 2px solid #93c8fe;
+        }
+        .ambient-shadow {
+            box-shadow: 0 40px 60px -15px rgba(213, 231, 252, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface min-h-screen overflow-x-hidden selection:bg-primary/30">
+<!-- Hero Background Environment -->
+<div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-secondary-container/20 rounded-full blur-[100px]"></div>
+<!-- Floating Artistic 3D Elements -->
+<div class="absolute top-[15%] left-[10%] w-32 h-32 opacity-60">
+<img class="w-full h-full object-contain" data-alt="3D translucent geometric prism with iridescent light refraction and soft stormy shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSrE0sVAZyddothKaOq44PYIXWMvljEJkmEsFgx3rzazhiUv9q3TVuFh9tLEUVSwbT38qVIg8zdI8nS3CgFC9xdLqZSdgG74FW47v-KCjfhPxkj11uXcNOnZ81wiiOeHfEfkopzumx8Y2FSPe4jTwBuWRf22e2bt7gDVmYwsvLXu-6POMVasuRgjcuOZ3zfHOTYAF-wTXNAiofVk0IKmhI8GW22AH9DuF6uRp8tQDGK3mM-CX0524baoi5D2l8VNsAlBqx1yxs1xw5"/>
+</div>
+<div class="absolute bottom-[20%] right-[15%] w-48 h-48 opacity-40">
+<img class="w-full h-full object-contain" data-alt="abstract 3D vaporous cloud formation with metallic silver highlights and deep blue undertones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD20ofwNL250SyFnCVepY5W12abPch4my8y5X0kzFqqx0QX6KllYWt5Qbwb8Uj5hLH9firjBxfJ_ejvO4aw7VshHun45thf-G9kjOiTOw-J7PZdm8eJZ1Fv8c8mEUczctuofNi3AwJErF5HEHDLEG5GKepmjl-RjPar90D7MN3x7TA9JwBOx04lug09kB2YoXhlIfHsuGCiDJmobqDK4ZGUQvRMxkyN9Iodf4-JuX2GS6kKchkysGX-tYqIDx2LJKcssjanNUMdjhCh"/>
+</div>
+<div class="absolute top-[60%] left-[5%] w-24 h-24 opacity-50 rotate-12">
+<img class="w-full h-full object-contain" data-alt="floating 3D sphere made of frosted azure glass with glowing internal core" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmdN-jc5b5yk9f_N8Gmrlkd_VQmsGhuvt0MEo5FzDU4d37g3OcrFDdXpzAiybrZlo7nImdCI2BJyedvk_FYb14YDE6sa80zRjxLNfHiQV7q7X0F6cowrmFulCWNEn487WP3ql3b-AUsuUpDUcA6Dh1mWDC-2P5YPkC9Nr2hHSVjdizxQ2gtEnf70qVR2JmZwDJNBjKwu_3Qbb70JKTmqkso7XVpogE0WVX9AutZzDTDTGnhwHKHmqSvwUTXXj3pSJiScOmrkb6Xzmd"/>
+</div>
+</div>
+<!-- Main Navigation (Minimalist for Focus) -->
+<header class="relative z-50 px-8 py-8 flex justify-between items-center max-w-7xl mx-auto">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-black tracking-tighter text-blue-50 font-headline uppercase">ETHEREAL</span>
+</div>
+<a class="text-on-surface-variant font-label text-sm uppercase tracking-widest hover:text-primary transition-colors flex items-center gap-2 group" href="#">
+<span>Back to explore</span>
+<span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</header>
+<main class="relative z-10 min-h-[calc(100vh-160px)] flex items-center justify-center px-4 py-12">
+<div class="w-full max-w-xl">
+<!-- Glassmorphic Sign Up Card -->
+<div class="glass-panel ambient-shadow rounded-[2rem] p-8 md:p-12 border border-outline-variant/15">
+<div class="mb-10 text-center">
+<h1 class="font-headline text-4xl md:text-5xl font-bold tracking-tight text-white mb-3">Join the Storm.</h1>
+<p class="text-on-surface-variant text-lg font-light leading-relaxed">Create your identity in the archive of digital artifacts.</p>
+</div>
+<form method="post" class="space-y-6">
+    {% csrf_token %}
+<!-- Username Field -->
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary/70 ml-1">Username</label>
+<div class="group relative bg-surface-container-low active-indicator-focus transition-all duration-300 rounded-xl overflow-hidden border-l-2 border-transparent">
+<input id="username" name="username" class="w-full bg-transparent border-none py-4 px-5 text-on-surface focus:ring-0 placeholder:text-outline/50 font-medium" placeholder="CuratorName" type="text"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-focus-within:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm">alternate_email</span>
+</div>
+</div>
+</div>
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary/70 ml-1">Email Address</label>
+<div class="group relative bg-surface-container-low active-indicator-focus transition-all duration-300 rounded-xl overflow-hidden border-l-2 border-transparent">
+<input id="email" name="email" class="w-full bg-transparent border-none py-4 px-5 text-on-surface focus:ring-0 placeholder:text-outline/50 font-medium" placeholder="archive@ethereal.art" type="email"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-focus-within:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+</div>
+</div>
+</div>
+<!-- Password Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary/70 ml-1">Password</label>
+<div class="group relative bg-surface-container-low active-indicator-focus transition-all duration-300 rounded-xl overflow-hidden border-l-2 border-transparent">
+<input id="password" name="password" class="w-full bg-transparent border-none py-4 px-5 text-on-surface focus:ring-0 placeholder:text-outline/50 font-medium" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label text-xs uppercase tracking-widest text-primary/70 ml-1">Confirm</label>
+<div class="group relative bg-surface-container-low active-indicator-focus transition-all duration-300 rounded-xl overflow-hidden border-l-2 border-transparent">
+<input id="confirm_password" name="confirm_password" class="w-full bg-transparent border-none py-4 px-5 text-on-surface focus:ring-0 placeholder:text-outline/50 font-medium" placeholder="••••••••" type="password"/>
+</div>
+</div>
+</div>
+<!-- Terms checkbox -->
+<div class="flex items-start gap-3 px-1 py-2">
+<div class="mt-1 relative flex items-center justify-center">
+<input class="peer appearance-none w-5 h-5 border border-outline-variant rounded bg-surface-container-high checked:bg-primary checked:border-primary transition-all cursor-pointer" id="terms" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-[16px] text-on-primary pointer-events-none opacity-0 peer-checked:opacity-100">check</span>
+</div>
+<label class="text-sm text-on-surface-variant font-light leading-snug cursor-pointer" for="terms">
+                            I accept the <a class="text-primary hover:underline underline-offset-4" href="#">Terms of Resonance</a> and <a class="text-primary hover:underline underline-offset-4" href="#">Data Privacy Acts</a>.
+                        </label>
+</div>
+<!-- Submit Button -->
+<button type="submit" class="w-full mt-4 py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold uppercase tracking-widest rounded-xl hover:shadow-[0_0_30px_rgba(147,200,254,0.3)] hover:scale-[1.02] active:scale-95 transition-all duration-500">
+                        Initialize Account
+                    </button>
+</form>
+<div class="mt-10 pt-8 border-t border-outline-variant/10 flex flex-col items-center">
+<p class="text-on-surface-variant text-sm mb-6">Already a resident?</p>
+<div class="flex gap-4 w-full">
+<a class="flex-1 flex items-center justify-center gap-2 py-3 bg-surface-container-highest rounded-xl text-sm font-label uppercase tracking-wider text-on-surface hover:bg-surface-bright transition-colors border border-outline-variant/15">
+                            Sign In
+                        </a>
+<button class="w-12 h-12 flex items-center justify-center bg-surface-container-highest rounded-xl border border-outline-variant/15 hover:text-primary transition-colors">
+<img class="w-5 h-5 opacity-70" data-alt="Google logo icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Fn6IziyL617IKZseMsJrZCGycnkbaIvupZwEP5Q6lW75JyZQQ9WQn8CEKVboqU7RQbZTUctE02SBfwZd61XVkrT2Z8RcibWvroRdghU-dAB9_aWBgwyg5mYxBanWUlPx7PWEaBG0lFUbODLLYIJXwPjjKJ6ZRPqJlgwBdelbF_JcsDcIlX4PjKv_6y3JyKW-sqtUelewIKRBfadK-piCdatBN3a4BgHgQiG1pVqFvBTvXS9o0ZNykaVPWoeqqR9zPU__crHsvmsq"/>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Editorial Footer -->
+<footer class="relative z-10 w-full pt-24 pb-12 bg-slate-950/30">
+<div class="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-blue-100 font-headline">ETHEREAL</span>
+<span class="font-body text-xs tracking-widest uppercase text-slate-500">© 2024 ETHEREAL. DEFINED BY THE STORM.</span>
+</div>
+<div class="flex gap-8">
+<a class="font-body text-xs tracking-widest uppercase text-slate-500 hover:text-blue-300 transition-colors duration-300" href="#">Privacy</a>
+<a class="font-body text-xs tracking-widest uppercase text-slate-500 hover:text-blue-300 transition-colors duration-300" href="#">Terms</a>
+<a class="font-body text-xs tracking-widest uppercase text-slate-500 hover:text-blue-300 transition-colors duration-300" href="#">Shipping</a>
+<a class="font-body text-xs tracking-widest uppercase text-slate-500 hover:text-blue-300 transition-colors duration-300" href="#">Contact</a>
+</div>
+</div>
+</footer>
+<!-- Decorative Corner Element -->
+<div class="fixed bottom-10 left-10 z-0 hidden lg:block opacity-20 rotate-[25deg]">
+<img class="w-40 h-40" data-alt="stylized 3D liquid metal wave sculpture with smooth flowing curves and reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBry5-tA0tb9EIgZRAsaVNS9R7W4OU8A4js0bwCTid8tdinCObl53W4RjYi0Gxr41hd8dhMMANWFKe0hJD4sId7qlJEC97h9RsbLnzOPc-_RhrU28tguxxUT5KmzmoA5873Fp8D4GEROrRNzCH4Ql8XvxtKWqw7naGwFEq0iBxlEwL2lI7bPU0cJNZOiuyQIQjWWbWtGf1PG_qcLmum8itFXrGa2s4DBgtNyvlXOPS4olzehNy04mXXuq9qy0CSzNMw-KuQQcQQ0CZd"/>
+</div>
+</body></html>

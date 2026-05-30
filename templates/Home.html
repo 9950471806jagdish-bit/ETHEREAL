@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#667789",
+                    "on-secondary": "#2e4e67",
+                    "on-secondary-fixed": "#1a3b53",
+                    "inverse-primary": "#286393",
+                    "error": "#ff716c",
+                    "secondary-container": "#2a4a63",
+                    "on-background": "#d5e7fc",
+                    "secondary-fixed": "#bbdbfa",
+                    "inverse-surface": "#f7f9ff",
+                    "secondary": "#bbdbfa",
+                    "primary-dim": "#86bbf0",
+                    "on-primary-fixed": "#002c4a",
+                    "tertiary-fixed-dim": "#b0cff0",
+                    "on-primary-container": "#00253f",
+                    "background": "#000f1d",
+                    "surface-variant": "#0c283c",
+                    "primary": "#93c8fe",
+                    "on-surface-variant": "#9badc0",
+                    "surface-bright": "#112e44",
+                    "secondary-dim": "#adcdeb",
+                    "primary-fixed-dim": "#86bbf0",
+                    "tertiary-container": "#bdddff",
+                    "surface-container-highest": "#0c283c",
+                    "surface": "#000f1d",
+                    "secondary-fixed-dim": "#adcdeb",
+                    "outline-variant": "#394a5a",
+                    "surface-container-high": "#072134",
+                    "surface-container": "#041b2c",
+                    "on-secondary-fixed-variant": "#385771",
+                    "primary-container": "#70a5d9",
+                    "on-surface": "#d5e7fc",
+                    "tertiary-fixed": "#bdddff",
+                    "tertiary": "#d8eaff",
+                    "inverse-on-surface": "#465767",
+                    "on-primary": "#00416a",
+                    "on-tertiary-fixed-variant": "#3a5975",
+                    "tertiary-dim": "#b0cff0",
+                    "surface-container-lowest": "#000000",
+                    "surface-dim": "#000f1d",
+                    "primary-fixed": "#93c8fe",
+                    "on-secondary-container": "#b4d4f3",
+                    "on-tertiary-fixed": "#1b3c57",
+                    "on-primary-fixed-variant": "#004a78",
+                    "on-tertiary": "#395874",
+                    "surface-tint": "#93c8fe",
+                    "on-error": "#490006",
+                    "on-tertiary-container": "#304f6b",
+                    "surface-container-low": "#011524",
+                    "error-container": "#9f0519",
+                    "on-error-container": "#ffa8a3",
+                    "error-dim": "#d7383b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(12, 40, 60, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(147, 200, 254, 0.08);
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, #072134 0%, #000f1d 70%);
+        }
+        .glow-text {
+            text-shadow: 0 0 30px rgba(147, 200, 254, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 bg-slate-900/40 backdrop-blur-xl rounded-full mt-6 mx-auto max-w-5xl shadow-[0_40px_60px_-15px_rgba(213,231,252,0.06)]">
+<div class="text-2xl font-bold tracking-tighter text-blue-200 font-headline">Ethereal Horizon</div>
+<div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-wider uppercase text-sm">
+<a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Gallery</a>
+<a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Artists</a>
+<a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Auctions</a>
+<a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Curations</a>
+</div>
+<div class="flex items-center space-x-5"><button class="hidden md:block text-slate-400 hover:text-blue-100 transition-colors duration-300 font-['Space_Grotesk'] tracking-wider uppercase text-sm font-semibold mr-2"><a href="{% url 'login' %}">Sign In</a></button>
+<button class="text-blue-300 hover:text-blue-100 transition-colors active:scale-95">
+<span class="material-symbols-outlined">shopping_cart</span>
+</button>
+<button class="text-blue-300 hover:text-blue-100 transition-colors active:scale-95">
+<span class="material-symbols-outlined"><a href="{% url 'userprofile' %}">account_circle</a></span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-vh-[1024px] pt-32 pb-20 overflow-hidden hero-gradient">
+<div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="z-10 relative">
+<span class="font-headline text-primary-fixed tracking-[0.3em] uppercase text-xs mb-6 block">Exquisite Digital Drafts</span>
+<h1 class="font-headline text-7xl md:text-8xl font-bold text-on-surface leading-[0.9] mb-8 glow-text">
+                        The Future of <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">Fine Art</span>
+</h1>
+<p class="text-on-surface-variant text-xl max-w-md mb-10 leading-relaxed font-light">
+                        Discover, collect, and trade original digital drawings from the world's most visionary artists. Immersive art meets the blockchain.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-xl text-lg hover:brightness-110 transition-all active:scale-95">
+                            Start Collecting
+                        </button>
+<button class="px-8 py-4 bg-surface-container-highest text-on-surface font-semibold rounded-xl text-lg border border-outline-variant/15 hover:bg-surface-bright transition-all active:scale-95">
+                            Sell Your Work
+                        </button>
+</div>
+</div>
+<div class="relative">
+<div class="relative w-full aspect-square flex items-center justify-center">
+<!-- Floating 3D Objects Aesthetic -->
+<div class="absolute w-64 h-64 glass-card rounded-3xl -rotate-12 translate-x-[-20%] translate-y-[-10%] shadow-2xl flex items-center justify-center p-4">
+<img class="w-full h-full object-cover rounded-2xl opacity-80" data-alt="abstract 3D fluid shape in shades of deep blue and electric azure floating in a dark atmospheric space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmrmRTPgFkvykKJK1BrM5f-8o0XylPivu0FSUR971zLN-zMbd8oTcLiWM822UjObfCxE-vAOja_aSBWSyIn74UrH_SRU0NswiEgy234yOU9NMCk4iz2BL8cpdF06Wwva4GJrNwBqTi0bPLA9WLaZI3tFBReJPSI_iwP3YlIwsY1QbL2IuXZ00Psi-yWAqR-JMEn_GuwQj_wZ_wJvZf6fSNuayEVsGgywr6_Ecy5-ZMS9NFHqYK-o36BTVwDGsefxp-WqId9fFNdJtl"/>
+</div>
+<div class="absolute w-72 h-80 glass-card rounded-3xl rotate-6 translate-x-[15%] translate-y-[15%] shadow-2xl overflow-hidden p-4">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="minimalist digital line drawing of a human silhouette with glowing blue neon accents on a black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4ToWvYTwiLt4U8LGF8XFMmYgW0cKxodAenN_vZGKBu4fcWCsBUDCA4IQtzPOnxNS_wnw_fd9vpEOdNnwQoUIYMJ4Cf8q1ZaB_-is1f4f1fg89qRpKTta1faHa1GOgl2j_OUkorFOAbyEsTT8ERMYs0b5Py1Zf-zru_6HDsBsxzcHUr1EkrlYfKhB2ibpRPA5qsg4sSV9Z1ya6T2es2E-wTft2_G0jGJbb__GvK3tEi-AKHIrozHmL-eow8HqJhAim6_45t4QTQ_7"/>
+</div>
+<div class="absolute w-40 h-40 bg-primary/20 blur-[100px] rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Value Proposition -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary-container/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">auto_awesome</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Curated Excellence</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">Every piece is hand-selected by our curatorial board to ensure the highest standards of digital craftsmanship.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary-container/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">shield_with_heart</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Verified Identity</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">Proof of authorship and ownership secured on the decentralized ledger, giving collectors true peace of mind.</p>
+</div>
+<div class="space-y-4">
+<div class="w-12 h-12 bg-primary-container/30 rounded-xl flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">rocket_launch</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Artist Empowerment</h3>
+<p class="text-on-surface-variant font-light leading-relaxed">We take a minimal commission, ensuring artists keep the lion's share of their creative earnings.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Art Gallery -->
+<section class="py-32">
+<div class="max-w-7xl mx-auto px-6">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="font-headline text-5xl font-bold text-on-surface mb-4">Curated Selections</h2>
+<p class="text-on-surface-variant text-lg">Featured digital drawings from our latest weekly drops.</p>
+</div>
+<a class="text-primary font-bold hover:underline underline-offset-8" href="#">Browse All Gallery</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Art Card 1 -->
+<div class="glass-card rounded-3xl p-4 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden rounded-2xl mb-4 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="charcoal-style digital drawing of an intricate flower with deep shadows and high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAD4ToWvYTwiLt4U8LGF8XFMmYgW0cKxodAenN_vZGKBu4fcWCsBUDCA4IQtzPOnxNS_wnw_fd9vpEOdNnwQoUIYMJ4Cf8q1ZaB_-is1f4f1fg89qRpKTta1faHa1GOgl2j_OUkorFOAbyEsTT8ERMYs0b5Py1Zf-zru_6HDsBsxzcHUr1EkrlYfKhB2ibpRPA5qsg4sSV9Z1ya6T2es2E-wTft2_G0jGJbb__GvK3tEi-AKHIrozHmL-eow8HqJhAim6_45t4QTQ_7"/>
+<div class="absolute bottom-3 right-3 px-3 py-1 bg-surface-container-highest/60 backdrop-blur-md rounded-full text-xs font-bold text-primary">
+                                Live Auction
+                            </div>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1">Obsidian Bloom</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm">Elena Voss</span>
+<span class="text-primary font-bold">1.20 ETH</span>
+</div>
+</div>
+<!-- Art Card 2 -->
+<div class="glass-card rounded-3xl p-4 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden rounded-2xl mb-4 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="vibrant abstract digital ink wash painting with layers of cerulean blue and dark indigo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkoLvXeIs0T3g1cWD0UvDs7sBoP6lqkeL0sw3ZZaiPEzwT0A79kZ8Sy2Mu0OrqJ0IhFSwBRbfx6cwh_NPMxHwzSvPVsJTJQcL-v-FbVuL5UWgWYrxprUkwOir1dcFkR8R3AGZg9c2rehgYMPFDbJdmw3R9jS5U_Mj3nYlS6fgpcJzQZFMlfsRJkaK1ebGjGL9NZv9iujZddRaY4Jp7K2weBUAf1wBlyfrqwoLN6IEQLastR8taTKrWdXgZ8qtsKqpO9TbijYri4Vj2"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1">Ether Drift</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm">Marcus Thorne</span>
+<span class="text-primary font-bold">0.85 ETH</span>
+</div>
+</div>
+<!-- Art Card 3 -->
+<div class="glass-card rounded-3xl p-4 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden rounded-2xl mb-4 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="architectural sketch of a futuristic bridge in a foggy atmosphere, rendered in blue digital ink" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW5C_AEVsgUDH4NT4BKxuvFlp7aOtWzxkSnR8ZWbZc5Jc4ndk9wiA2s-ZUStJkxqEK8EHF8-J7NZ9jcSwFdlXPc_b3cUM8px91GzVHp4kFGh76Gp9PLn7xWgfFa8gW3bSEsI527DV6yk61ctePXawMr6wovF7vdk-t7kTOUCqBcCPkwEp9Y5_IfDCZB5x9XVGSNzYJPJS9ixf1sfTvZHk6ijKn4XYgMEMt4IIjmCDhHy5hqeHhz2X7G-njrU5CwUOuAw6sNd-9QMoh"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1">Iron Horizon</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm">Sora Kim</span>
+<span class="text-primary font-bold">2.10 ETH</span>
+</div>
+</div>
+<!-- Art Card 4 -->
+<div class="glass-card rounded-3xl p-4 group cursor-pointer transition-transform duration-500 hover:-translate-y-2">
+<div class="relative overflow-hidden rounded-2xl mb-4 aspect-[4/5]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="geometric pattern of intersecting lines forming a sphere, deep blue palette with glowing edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjKzAQXpwZ1VRWxXtROW4jLvRjkoqOceo2WATRGqoE17hEpo4oKR0Qur3HVzUsQE1rgL_owtcZY1XbyBeumaKv-UacXqCZYcs9LLaWVqltQYlUJxvrqEDPzMOkoZ2Btdmcgdhi095KinjYY4Ko2aG8ivHNMUwB-ihFKqU-V5BUN_5r8PEC8hL1f4Yez4gzsLZ7xw6VznGYPEZ9Pxzlsj1h1BFsmUK9HepzND7Dx-4ID-7RNbtLby3BjaS0cy-5plUziaAHp9Up_38C"/>
+</div>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-1">Geometric Echo</h4>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-sm">Aris Sol</span>
+<span class="text-primary font-bold">0.50 ETH</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Artist Spotlight -->
+<section class="py-32 relative">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-surface-container-high rounded-[3rem] p-12 lg:p-20 flex flex-col lg:flex-row gap-16 items-center border border-outline-variant/10">
+<div class="w-full lg:w-1/2">
+<span class="font-headline text-primary tracking-widest uppercase text-sm mb-6 block">Artist Spotlight</span>
+<h2 class="font-headline text-6xl font-bold text-on-surface mb-8">Julianne Valet</h2>
+<p class="text-on-surface-variant text-xl leading-relaxed mb-10 font-light italic">
+                            "I see digital space not as a screen, but as an infinite canvas where light and shadow can dance without the constraints of physics."
+                        </p>
+<div class="flex items-center space-x-12 mb-10">
+<div>
+<span class="block text-3xl font-bold text-on-surface">124</span>
+<span class="text-sm text-slate-500 uppercase tracking-tighter">Creations</span>
+</div>
+<div>
+<span class="block text-3xl font-bold text-on-surface">12k+</span>
+<span class="text-sm text-slate-500 uppercase tracking-tighter">Collectors</span>
+</div>
+<div>
+<span class="block text-3xl font-bold text-on-surface">8.4 ETH</span>
+<span class="text-sm text-slate-500 uppercase tracking-tighter">Highest Sale</span>
+</div>
+</div>
+<button class="px-10 py-4 bg-surface-container-highest border border-primary/20 text-primary font-bold rounded-xl hover:bg-primary hover:text-on-primary transition-all">
+                            View Full Collection
+                        </button>
+</div>
+<div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img class="w-full aspect-square object-cover rounded-3xl" data-alt="surreal digital landscape with floating crystalline structures and a soft violet sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0XNXIXSlDNmlizip-ZzoOBpGgbLP7-ra4rYM_WxGAvWJdYBOtnhzCBOfzoszgIlvoYnSe39JCgOvABmT6Ta1WxA6DUUPceLe2la2-NAwrKm7QtxxuwmltmHua7riKH8V6tOXEJHhZ0MDtLMhmXB9AZnGnYaV5JHDwroarGsKi5qu3sA9os434yfXMmpvHBLnSiavF91T4wxoj_a_LwLWttvF_Q-jZje2i9u_okaX07vien5kWLouN0mhMGCJJOQU-hAELmAAwiHFM"/>
+<img class="w-full aspect-[3/4] object-cover rounded-3xl" data-alt="abstract expressionist digital stroke work in shades of ocean blue and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ZL7Eb6amjg81W9yUxoF_uGwOaX_08pp_qS9KENBOIkweILGwM0nos3K5yc5VbgauapWNByHPQJSzuTuRhM-r6menE_N74UIAjjTZB2CzqtCEt4KjEObOIz9Y0ttHQuJI_gr8TaH09_K1bbBcSF-IA5ENTcOtCgh37aSsrtauXp21GNufaSR-Eplfkn2Tk5ihp1MImGsxNCEyboyTdJsux9ELYQ_OIjcTcS22Z9OD_JBNOcW6JKrQQipCec0jHNMUoh91hR_0Hbys"/>
+</div>
+<div class="pt-12 space-y-4">
+<img class="w-full aspect-[3/4] object-cover rounded-3xl" data-alt="close-up of digital paint textures with granular details and deep blue color gradations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3LzfYKS6ebTd9z6J3QKE-hUYHkiBeYTFuMuwStc99CYmIzE2V4edwuXpkaJ3t9OrECfXF8bl3Ah4wkM3uHt4VzRb-KES2NXrFeB6K92ZLlxXWfLOrRRyan8OB1BP-zOmrra_W6VncWcHktoA262Kf6YlFRj8OgrR456TLx08BHRyjSRxQGcXJH8Ygjv6RdWLUfdlGy3FZ2jAebPZJ17N9Ntm5ADfj6qbKJ3QwTPZM4anmEGqkYrtKw8Z2OZzgW_GwMvbmN47InEfS"/>
+<img class="w-full aspect-square object-cover rounded-3xl" data-alt="dreamy ethereal digital painting of clouds at twilight with soft glowing light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfdMF0472D4SYiCG3lkWfgd-r5ItKH3ZmMQoOvX6Ufr2YUq5AOLVysOHyqZgeVcuaDXCcPjHaoCi2rwR2P2LwqTWiKmptydvoVUTMd7bok2lmAWP_hpuVyCUb_YeNpzQWq2ndBN7gdovDWx84YcRcv_avGdYk67GNUMOD_xDwsjJiSNim0yvG9e10iIe336WE7kztzAfQ9rkRrf1UQoRbfYWBBpXW8ELVIOso7Nvx96EGujbyaM57Rocvzk7OhdHPUufTbvm8ysX8N"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Newsletter -->
+<section class="py-32 bg-surface">
+<div class="max-w-5xl mx-auto px-6 glass-card rounded-[2.5rem] py-20 px-12 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+<div class="relative z-10">
+<h2 class="font-headline text-5xl font-bold text-on-surface mb-6">Join the Inner Circle</h2>
+<p class="text-on-surface-variant text-xl max-w-2xl mx-auto mb-10">Get early access to exclusive drops, artist interviews, and curated curations before they hit the public market.</p>
+<div class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow px-6 py-4 bg-surface-container-low border-0 border-l-2 border-primary border-opacity-0 focus:border-opacity-100 focus:ring-0 text-on-surface rounded-xl placeholder:text-slate-500 transition-all" placeholder="Your creative email" type="email"/>
+<button class="px-8 py-4 bg-primary text-on-primary font-bold rounded-xl active:scale-95 transition-transform">Subscribe</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 grid grid-cols-1 md:grid-cols-4 gap-12 border-t border-slate-800/20 bg-slate-950 font-['Manrope'] text-sm leading-relaxed">
+<div class="col-span-1 md:col-span-1">
+<div class="text-lg font-black text-slate-200 mb-6">Ethereal Horizon</div>
+<p class="text-slate-500 mb-8 max-w-xs">© 2024 Ethereal Horizon. Crafted for the artistic soul.</p>
+<div class="flex space-x-4">
+<a class="text-slate-500 hover:text-blue-200" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-500 hover:text-blue-200" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="text-slate-500 hover:text-blue-200" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="text-blue-400 font-semibold mb-2">Marketplace</h5>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Gallery</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Artists</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Auctions</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Artist Portal</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="text-blue-400 font-semibold mb-2">Support</h5>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Shipping &amp; Returns</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">FAQ</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="text-blue-400 font-semibold mb-2">Legal</h5>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-slate-500 hover:text-blue-200 transition-all duration-200" href="#">Cookie Settings</a>
+</div>
+</footer>
+</body></html>
