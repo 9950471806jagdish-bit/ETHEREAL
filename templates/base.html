@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Manrope"],
+                    }
+                },
+            },
+        }
+    </script>
+
+    <style>
+        /* Fixes the rendering of the Material Icons */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Temporary dark background to make the light-colored navbar visible */
+        body {
+            background-color: #000f1d; 
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+{% block content %}
+<body>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-3 bg-slate-900/40 backdrop-blur-xl rounded-full mt-6 mx-auto max-w-5xl shadow-[0_40px_60px_-15px_rgba(213,231,252,0.06)]">
+        
+        <div class="text-2xl font-bold tracking-tighter text-blue-200 font-headline">
+            Ethereal Horizon
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8 font-['Space_Grotesk'] tracking-wider uppercase text-sm">
+            <a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Gallery</a>
+            <a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Artists</a>
+            <a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Auctions</a>
+            <a class="text-slate-400 hover:text-blue-100 transition-colors duration-300" href="#">Curations</a>
+        </div>
+        
+        <div class="flex items-center space-x-5">
+            <button class="hidden md:block text-slate-400 hover:text-blue-100 transition-colors duration-300 font-['Space_Grotesk'] tracking-wider uppercase text-sm font-semibold mr-2">
+                <a href="{% url 'login' %}">Sign In</a>
+            </button>
+            <button class="text-blue-300 hover:text-blue-100 transition-colors active:scale-95">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+            <button class="text-blue-300 hover:text-blue-100 transition-colors active:scale-95">
+                <a href="{% url 'userprofile' %}" class="flex items-center">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </a>
+            </button>
+        </div>
+        
+    </nav>
+{% endblock %}
+</body>
+</html>

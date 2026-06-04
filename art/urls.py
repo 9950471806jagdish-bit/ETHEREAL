@@ -28,6 +28,7 @@ urlpatterns = [
     path('',views.Home,name='Home'),
     path('userprofile/',views.userprofile,name='userprofile'),
     path('edituser/',views.editeuser,name='edituser')
+    
 ]
 
 if settings.DEBUG:

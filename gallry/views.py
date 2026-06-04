@@ -39,23 +39,33 @@ def Home(request):
 
 @login_required
 def userprofile(request):
-
     profile, created = Profile.objects.get_or_create(userprofile=request.user)
-    return render(request, 'userprofile.html', {'profile': profile})
 
     if request.method == "POST":
-        # Check if a post image was uploaded
+        # Check if a post image or post video was uploaded
         if 'id_post_image' in request.FILES:
             post_img = request.FILES['id_post_image']
-            # Create and save a new Post instance
             Post.objects.create(post_image=post_img)
             return redirect('userprofile')
-            
-    posts = Post.objects.all()  # Fetch all uploaded posts
+        elif 'id_post_video' in request.FILES:
+            post_vid = request.FILES['id_post_video']
+            Post.objects.create(post_image=post_vid)
+            return redirect('userprofile')
+        
+    posts = Post.objects.all().order_by('-id')  # Fetch all uploaded posts
     return render(request, 'userprofile.html', {
         'profile': profile,
         'posts': posts
     })
+    
+
+    
+
+
+
+
+
+
 
 
 

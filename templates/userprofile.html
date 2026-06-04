@@ -148,7 +148,7 @@
 </div>
 <!-- Stats -->
 <div class="flex justify-center md:justify-start gap-10 mb-6 font-body">
-<div class="text-lg"><span class="font-bold text-primary">124</span> <span class="text-on-surface-variant">Posts</span></div>
+<div class="text-lg"><span class="font-bold text-primary">{{ posts|length }}</span> <span class="text-on-surface-variant">Posts</span></div>
 <div class="text-lg"><span class="font-bold text-primary">12k+</span> <span class="text-on-surface-variant">Followers</span></div>
 <div class="text-lg"><span class="font-bold text-primary">842</span> <span class="text-on-surface-variant">Following</span></div>
 </div>
@@ -163,16 +163,18 @@
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
 <section class="flex gap-4 mb-12 border-y border-outline-variant/10 py-6">
-<button class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors group">
-<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">cloud_upload</span>
+<div class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-pointer">
+<span  class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">cloud_upload</span>
 <input type="file" name="id_post_image" id="id_post_image" class="hidden" onchange="this.form.submit()">
-<label for="id_post_image" class="font-semibold text-sm tracking-wide font-label uppercase">Upload Art</label>
-</button>
-<button type="submit" class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors group">
+<label for="id_post_image" class="font-semibold text-sm tracking-wide font-label uppercase cursor-pointer">Upload Art</label>
+</div>
+<div class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container-low hover:bg-surface-container-high transition-colors group cursor-pointer">
 <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">videocam</span>
-<input type="file" name="id_post_video" id="id_post_video" class="hidden">
-<label for="id_post_video" class="font-semibold text-sm tracking-wide font-label uppercase">Post Video</label>
-</button>
+<input type="file" name="id_post_video" id="id_post_video" class="hidden" onchange="this.form.submit()">
+<label for="id_post_video" class="font-semibold text-sm tracking-wide font-label uppercase cursor-pointer">Post Video</label>
+</div>
+
+
 </section>
 </form>
 <!-- Content Grid -->
