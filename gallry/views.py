@@ -3,9 +3,13 @@ from django.shortcuts import render
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+# pyrefly: ignore [missing-import]
 from .models import Profile
+# pyrefly: ignore [missing-import]
 from .forms import ProfilePhotoForm
-from .models import Post
+# pyrefly: ignore [missing-import]
+from .models import Post 
 
 # Create your views here.
 def login(request):
@@ -33,6 +37,11 @@ def signup(request):
             User.objects.create_user(username=username, email=email, password=password)
             return redirect('login')
     return render(request,'signup.html')
+
+def logout(request):
+    if request.method == "POST":
+        logout(request)
+        return redirect('Home')
 
 def Home(request):
     return render(request,'Home.html')

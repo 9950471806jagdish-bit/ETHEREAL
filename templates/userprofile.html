@@ -1,110 +1,16 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Aria Sterling | ETHEREAL Artistry</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "inverse-on-surface": "#465767",
-                      "primary-fixed": "#93c8fe",
-                      "on-error": "#490006",
-                      "surface": "#000f1d",
-                      "on-secondary-fixed": "#1a3b53",
-                      "error-container": "#9f0519",
-                      "secondary-fixed": "#bbdbfa",
-                      "background": "#000f1d",
-                      "on-background": "#d5e7fc",
-                      "error-dim": "#d7383b",
-                      "tertiary": "#d8eaff",
-                      "outline": "#667789",
-                      "surface-container-lowest": "#000000",
-                      "on-primary-fixed": "#002c4a",
-                      "secondary": "#bbdbfa",
-                      "tertiary-dim": "#b0cff0",
-                      "primary": "#93c8fe",
-                      "on-tertiary": "#395874",
-                      "secondary-dim": "#adcdeb",
-                      "on-secondary-fixed-variant": "#385771",
-                      "on-secondary-container": "#b4d4f3",
-                      "tertiary-fixed-dim": "#b0cff0",
-                      "on-secondary": "#2e4e67",
-                      "surface-variant": "#0c283c",
-                      "tertiary-container": "#bdddff",
-                      "on-tertiary-fixed": "#1b3c57",
-                      "on-primary-fixed-variant": "#004a78",
-                      "surface-container-highest": "#0c283c",
-                      "primary-fixed-dim": "#86bbf0",
-                      "on-primary-container": "#00253f",
-                      "on-tertiary-container": "#304f6b",
-                      "surface-bright": "#112e44",
-                      "on-error-container": "#ffa8a3",
-                      "tertiary-fixed": "#bdddff",
-                      "surface-tint": "#93c8fe",
-                      "on-surface-variant": "#9badc0",
-                      "on-surface": "#d5e7fc",
-                      "on-tertiary-fixed-variant": "#3a5975",
-                      "surface-container-high": "#072134",
-                      "secondary-fixed-dim": "#adcdeb",
-                      "secondary-container": "#2a4a63",
-                      "surface-container": "#041b2c",
-                      "on-primary": "#00416a",
-                      "error": "#ff716c",
-                      "surface-dim": "#000f1d",
-                      "inverse-surface": "#f7f9ff",
-                      "inverse-primary": "#286393",
-                      "primary-container": "#70a5d9",
-                      "primary-dim": "#86bbf0",
-                      "outline-variant": "#394a5a",
-                      "surface-container-low": "#011524"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["Space Grotesk"],
-                      "body": ["Manrope"],
-                      "label": ["Manrope"]
-              }
-            },
-          },
-        }
-    </script>
+{% block title %}{{ profile.Username|title }} | ETHEREAL Artistry{% endblock %}
+
+{% block extra_head %}
 <style>
-        body { font-family: 'Manrope', sans-serif; background-color: #000f1d; color: #d5e7fc; overflow-x: hidden; }
-        .font-headline { font-family: 'Space Grotesk', sans-serif; }
-        .glass { background: rgba(12, 40, 60, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(147, 200, 254, 0.1); }
-        .floating-element { position: absolute; z-index: -1; opacity: 0.15; pointer-events: none; }
-    </style>
-</head>
-<body class="bg-surface text-on-surface selection:bg-primary/30">
-<!-- Top Navigation Anchor -->
-<nav class="fixed top-0 w-full z-50 bg-slate-950/40 backdrop-blur-xl flex justify-between items-center px-8 h-20 w-full shadow-[0_20px_50px_rgba(8,112,184,0.05)]">
-<div class="text-2xl font-bold tracking-tighter text-blue-100 font-headline">ETHEREAL</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-slate-400 font-medium hover:text-blue-100 transition-colors duration-300 font-body" href="#">Market</a>
-<a class="text-slate-400 font-medium hover:text-blue-100 transition-colors duration-300 font-body" href="#">Curators</a>
-<a class="text-blue-200 border-b-2 border-blue-400/50 pb-1 font-body" href="#">Artists</a>
-</div>
-<div class="flex items-center gap-6">
-<button class="material-symbols-outlined text-blue-300 hover:text-blue-100 transition-colors">notifications</button>
-<button class="material-symbols-outlined text-blue-300 hover:text-blue-100 transition-colors">shopping_cart</button>
-<div class="w-10 h-10 rounded-full overflow-hidden border border-blue-900/30">
-<img alt="User profile avatar" data-alt="close-up portrait of a woman with ethereal lighting and soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtkEqiUheY6V41-_jxfk1HipVQwofgE2zjy69iwVKeMJrYTPr9Ax0ctwKiAVuYRYFN6gS-WlhBaj4iEwfCqvbIqWxRkU7zotY7g7Os64CQOt_CcN6IwKjyeU-O61ATGqZaFf4c-5FN4ckRDG-g6t5zgbB7Pmhtj74Lmw4cOpgoVDjS2dh3AkFZOUwR1rNsS_U84SW2qGMU33SGPSllkK4Qb6tlk7w29UHis92s5WR2JHCtHj9QcRTVKmfNtNpfqit3onD3P2G7yeJW"/>
-</div>
-</div>
-</nav>
+    .font-headline { font-family: 'Space Grotesk', sans-serif; }
+    .glass { background: rgba(12, 40, 60, 0.4); backdrop-filter: blur(20px); border: 1px solid rgba(147, 200, 254, 0.1); }
+    .floating-element { position: absolute; z-index: -1; opacity: 0.15; pointer-events: none; }
+</style>
+{% endblock %}
+
+{% block content %}
 <!-- Background 3D Floating Elements -->
 <div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
 <div class="floating-element top-[10%] left-[5%] w-64 h-64 blur-3xl bg-primary/20 rounded-full"></div>
@@ -225,4 +131,4 @@
 <span class="material-symbols-outlined text-blue-300">auto_awesome</span>
 <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">person</span>
 </div>
-</body></html>
+{% endblock %}
